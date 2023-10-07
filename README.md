@@ -1,4 +1,4 @@
-# Vite Starter Kit 1 with following libraries
+# Vite with following libraries
 
 - Tailwind Css
 - DaisyUi
@@ -16,3 +16,5 @@
 > npm run build
 > num run preview
 ```
+
+## The currency exchange rate website, where user can see desire currency rate.
