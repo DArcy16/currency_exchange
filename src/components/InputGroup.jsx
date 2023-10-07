@@ -14,6 +14,7 @@ const InputGroup = ({
 	setValue,
 	inputValue,
 	setInputValue = "",
+	countryCode
 }) => {
 	const onChange = (value) => {
 		setValue(value);
@@ -30,7 +31,7 @@ const InputGroup = ({
 				className="mt-2"
 				showSearch
 				style={{ width: 200, textAlign: "center" }}
-				placeholder="Select a person"
+				placeholder={`Select ${title}`}
 				optionFilterProp="children"
 				onChange={onChange}
 				filterOption={filterOption}
@@ -41,10 +42,15 @@ const InputGroup = ({
 				className={`mt-2`}
 				type="number"
 				defaultValue="1"
-				onChange={() => onInputChange(e)}
+				onChange={(e) => onInputChange(e)}
 				value={inputValue}
 				style={{ width: 200, textAlign: "center" }}
 			/>
+			<p className="mt-1 text-sm  text-neutral-200 font-normal text-center">
+				{
+					countryCode[value?.length === 3 ? value : value?.slice(-3)]
+				}
+			</p>
 		</div>
 	);
 };
